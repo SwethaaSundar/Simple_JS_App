@@ -177,7 +177,8 @@ let integerArray = [
 /*let carArray = [
   { type: 'Bus', wheels: 4, color: 'blue'},
   { type: 'Sport', wheels: 4, color: 'red'}
-];*/
+];
+consol.log(carArray[0].type); // output Bus*/
 
 // array of arrays
 /*let myCalculatorNumbers = [
@@ -270,6 +271,120 @@ To avoid this problem, use explicit variable names, like:
 isAccepted if it contains a boolean
 acceptedStatus if it can contain different strings
 acceptedDate if it contains a date */
+//----------
+
+// Conditionals - decision tree
+// Conditionals tell your program how to make decisions about what actions to perform. If this happens, then do that.
+
+// if-then
+/*if(condition){
+   action if the condition is true ;
+}*/
+/*let age = 20;
+if(age === 20){
+   console.log("You are 20 Years old");
+}*/
+
+// if-else
+/*if(condition){
+   action if the condition is true ;
+}
+else{
+   action if the condition in not true;
+}*/
+/*let age = 30;
+if(age === 20){
+   console.log("You are 20 Years old");
+}
+else{
+   console.log("You are not 20 Years old");
+}*/
+
+//else id optional
+//if-elseif
+/*let age = 30;
+if(age === 20){
+   console.log("You are 20 Years old");
+}
+elseif{
+   console.log("You are 30 Years old");
+}*/
+
+// semicolon after the { } of an if statement (it will be ignored, and you might see a warning that it’s unnecessary). 
+// But a semicolon where it doesn’t belong (such as after the round (brackets) of an if, for, while, or switch statement) is a very bad idea
+
+// Conditions
+/*console.log(1 === 2); // reads as "is 1 equal to 2?" //strictly compares the value
+console.log(1 == '1' or [1]); // it compares the only the value or content, so it will return true
+console.log(1 !== 2); // reads as "is 1 not equal to 2?"
+console.log(1 < 2); // reads as "is 1 less than 2?"
+console.log(1 > 2); // reads as "is 1 greater than 2?"
+console.log(1 <= 2); // reads as "is 1 less than or equal to 2?"
+console.log(1 >= 2); // reads as "is 1 greater than or equal to 2?"*/
+
+// Truthy values:
+/*Strings (unless it’s an empty string); e.g., "text", " "
+Numbers (unless the number is 0); e.g.,42
+Arrays (even empty arrays); e.g., [2,4], []
+Objects (even empty, property-less objects); e.g., {age: 42}, {} */
+
+// Falsy values:
+/*Empty strings (strings with spaces are not empty); e.g., "", ''
+The number 0; e.g., 0
+Null (value intentionally set to empty)
+Undefined (no value set)*/
+
+// the forms with three characters (=== and !==) check for the same content and data type, 
+// the forms with two characters (== and !=) will check for the same content and try to convert values if they have different data types. 
+
+// Chain condition - multiple conditions together at once
+// && (AND) and || (OR)
+
+// Ternary Operator - CONDITION ? THEN : ELSE
+/*let age = 20;
+let result = age > 19 ? 'Is not a teen' : 'Is a teen';
+console.log(result); // Is not a teen */
+// ----------
+
+// Loops
+// FOR - for(initialization;condition;action)
+/*let ages = [20, 30, 25, 22, 31];
+for (let i = 0; i < ages.length; i++) {
+console.log(ages[i] - 2);
+}*/
+
+// Looping Over Multiple Objects
+/*for(i = 5; i>=0; i--){
+   if (i === 0){
+      document.write('<p>There are no more monkeys.</p>');
+   }
+   else{
+      document.write('<p>' + i + ' little monkeys jumping on the bed. One fell off and bumped his head.</p>'); 
+   }
+}*/
+
+// while- This loop is excecuted until it becomes false
+// while(condition){
+// }
+
+/*let i = 1;
+while ( i < 5) {
+ console.log(i);
+  i++;
+}*/
+// do...while-he condition is checked after executing the statement inside the do part,
+// resulting in the specified statement executing at least once, even if the condition is never true.
+
+/*let i = 1;
+
+do {
+ console.log(i);
+i++
+}
+while ( i < 5)*/
+
+
+
 
 
 
