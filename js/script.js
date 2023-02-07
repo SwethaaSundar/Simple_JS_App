@@ -46,7 +46,7 @@ let pokemonList= [
 // console.log(pokemonList[3].types[1]);
 
 // Ex-1.3
-for ( let i = 0; i <= pokemonList.length; i++)
+/*for ( let i = 0; i <= pokemonList.length; i++)
 {
     if (pokemonList[i].height < 1){
         document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + " weight: " + pokemonList[i].weight + ")- Too small!!" + "<br><br>");
@@ -57,4 +57,18 @@ for ( let i = 0; i <= pokemonList.length; i++)
     else {
         document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + " weight: " + pokemonList[i].weight + ")- Too Big!!" + "<br><br>");
     }
-}
+} */
+
+//Ex-1.5
+// part-1
+pokemonList.forEach (function(list) {
+    if (list.height < 1){
+        document.write(list.name + " (height: " + list.height + " weight: " + list.weight + ")- Too small!!" + "<br><br>");
+    }
+    else if (list.height > 1 && list.height <= 1.5){
+        document.write(list.name + " (height: " + list.height + " weight: " + list.weight + ")- Average size" + "<br><br>");
+    }
+    else {
+        document.write(list.name + " (height: " + list.height + " weight: " + list.weight + ")- Too Big!!" + "<br><br>");
+    }  
+});

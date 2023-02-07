@@ -383,6 +383,108 @@ i++
 }
 while ( i < 5)*/
 
+// Functions- Functions encapsulate pieces of code, giving them a set purpose and name. 
+// They can then be placed almost anywhere within your codebase, executing the code inside of them with a single command
+// function name (inputs){
+//    function actions
+// }
+
+// What Are Parameters (and Arguments)?
+// We’ve mentioned the inputs that go inside parentheses of functions: these are called parameters when the function is declared, and arguments when it’s called. 
+// Since JavaScript is a dynamic type scripting language, a function parameter can have value of any data type
+
+/*function greetingMessage(firstName, lastName) {
+   document.write("Hello , My name is  " + firstName + " " + lastName)
+}
+greetingMessage("Swethaa", "Sundar");
+greetingMessage("Happy", "Sundar");*/
+
+// Defining and Calling Functions
+/*function ShowMessage() {
+   document.write("Hello Ron!");
+}
+ShowMessage();*/
+
+// Functions with return Statement-the function will return some sort of value you can use after it’s run
+/*function Sum(val1, val2) {
+   return val1 + val2;
+};
+let result = Sum(5,20); // returns 25
+console.log(result);*/
+
+// Function Expression - You can assign a function to a variable and then use that variable as a function. It’s called a function expression. Here’s an example:
+/*let add = function sum(val1, val2) {
+   return val1 + val2;
+};
+let result1 = add(100,200);
+console.log(result1); //returns 300
+let result2 = sum(100,200); // not valid*/
+
+// Anonymous Function -You’ve seen how you use names to declare and call a function. But JavaScript also allows you to define a function without a name. 
+// This unnamed function is called an anonymous function, and it must be assigned to a variable.
+/*let Message = function (){
+   console.log("Hello World!");
+};
+Message();
+let sayHello = function (firstName) {
+   console.log("Hello " + firstName);
+};
+sayHello("Bobby");
+sayHello();
+output:
+Hello World
+Hello Bobby
+Hello Undefined*/
+
+// Callback Functions -Using this method of passing one function’s results to another as parameters is called a callback
+/*function functionOne(param) {
+   return param + 5;
+   };
+  function functionTwo(param1) {
+     // some code
+    return param1 + 2;
+  }
+  document.write(functionOne(2)); // returns 7
+  document.write(functionTwo(functionOne(2)));; // functionTwo adds 2 to the result of functionOne (7) and returns 9 */
+
+// Pure Functions
+/*let age = 10;
+function getNewAge(age) {
+age = age + 1;
+  return age;
+}
+console.log(getNewAge(age)); // returns 11
+console.log(age); // returns  10*/
+
+// Function Parameters & Arguments
+/*let pokemonList = [ 1, 2, 3, 4 ];
+ 
+ let pokemonList2 = [ 5, 6, 7 ];
+ 
+ function printArrayDetails(list){
+   for (let i = 0; i < list.length; i++){
+    document.write("<p>" + list[i]+ "</p>");
+   }
+ }
+ printArrayDetails(pokemonList);
+ printArrayDetails(pokemonList2); */
+
+//  Function 'return' statement
+
+/*function divide( dividend, divisor){
+if (divisor === 0){
+ return "You are trying to divide by zero";
+}
+else {
+   let result = dividend / divisor;
+   return result;
+}
+}
+console.log (divide(10,10));*/
+
+
+
+
 
 
 
