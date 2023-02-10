@@ -7,8 +7,8 @@
     font-weight: 600;
     text-align: center;
   }
-  button{
-    margin: 20px;
+  .button{
+    margin: 5px;
     align-items: center;
     background-color: rgb(69, 78, 66);
     color: rgb(255, 255, 255);
@@ -37,7 +37,7 @@
     touch-action: manipulation;
     /* animation: 1s ease-in moveInBottom; */
   }
-  button:hover {
+  .button:hover {
     cursor: pointer;
     box-shadow: rgba(0, 1, 0, 0.2) 0 2px 8px;
     opacity: 0.85;

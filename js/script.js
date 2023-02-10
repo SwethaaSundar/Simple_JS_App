@@ -80,9 +80,26 @@ function add(list) {
 function getAll(){
     return pokemonList;
 }
+function addListItem(pokemon){
+    let pokeList = document.querySelector('.pokedex_lt');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+
+    button.innerText = pokemon.name;
+    button.classList.add('button');
+    pokeList.appendChild(listItem);
+    listItem.appendChild(button);
+
+    button.addEventListener('click',showDetails(pokemon));
+}
+function showDetails(pokemon){
+console.log('Name: '+ pokemon.name+ ', '+ 'Height: '+ pokemon.height+ 'cm, '+ 'Types: '+ pokemon.types+', '+ 'Weight: '+ pokemon.weight + 'kg' + '.')
+}
 return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem,
+    showDetails: showDetails
   };
 })();
 // console.log(pokemonList[5]);
@@ -106,14 +123,17 @@ return {
 //Ex-1.5
 // part-1
 // pokemonList.forEach (function(list) {
-pokemonRepository.getAll().forEach (function(list) {
-    if (list.height < 1){
-        document.write(list.name + " (height: " + list.height + " weight: " + list.weight + ")- Too small!!" + "<br><br>");
-    }
-    else if (list.height > 1 && list.height <= 1.5){
-        document.write(list.name + " (height: " + list.height + " weight: " + list.weight + ")- Average size" + "<br><br>");
-    }
-    else {
-        document.write(list.name + " (height: " + list.height + " weight: " + list.weight + ")- Too Big!!" + "<br><br>");
-    }  
+// pokemonRepository.getAll().forEach (function(list) {
+//     if (list.height < 1){
+//         document.write(list.name + " (height: " + list.height + " weight: " + list.weight + ")- Too small!!" + "<br><br>");
+//     }
+//     else if (list.height > 1 && list.height <= 1.5){
+//         document.write(list.name + " (height: " + list.height + " weight: " + list.weight + ")- Average size" + "<br><br>");
+//     }
+//     else {
+//         document.write(list.name + " (height: " + list.height + " weight: " + list.weight + ")- Too Big!!" + "<br><br>");
+//     }  
+// });
+pokemonRepository.getAll().forEach (function (pokemon) {
+pokemonRepository.addListItem(pokemon);
 });
