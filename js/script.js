@@ -90,7 +90,8 @@ function addListItem(pokemon){
     pokeList.appendChild(listItem);
     listItem.appendChild(button);
 
-    button.addEventListener('click',showDetails(pokemon));
+    // button.addEventListener('click',showDetails(pokemon)); it logs when the objects are loaded in the DOM
+    button.addEventListener('click', function() {showDetails (pokemon);}) // this logs only when the button is clicked
 }
 function showDetails(pokemon){
 console.log('Name: '+ pokemon.name+ ', '+ 'Height: '+ pokemon.height+ 'cm, '+ 'Types: '+ pokemon.types+', '+ 'Weight: '+ pokemon.weight + 'kg' + '.')
