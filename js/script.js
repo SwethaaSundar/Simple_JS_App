@@ -42,37 +42,39 @@ document.write(myFavFood);*/
 ];*/
 
 let pokemonRepository= (function() {
-    let pokemonList= [
-        {name: "Pikachu" , height: 0.4 , 
-        types: 'electric', weight: 6 },
+    let pokemonList= [];
+    let pokeapiUrl= 'https://pokeapi.co/api/v2/pokemon/';
+    // let pokemonList= [
+        // {name: "Pikachu" , height: 0.4 , 
+        // types: 'electric', weight: 6 },
     
-        {name: "Bulbasaur", height: 0.7 , 
-        types: ['grass','poison'], weight: 6.9 },
+        // {name: "Bulbasaur", height: 0.7 , 
+        // types: ['grass','poison'], weight: 6.9 },
     
-        {name: "Ponyta", height: 1 , 
-        types: 'fire', weight: 30},
+        // {name: "Ponyta", height: 1 , 
+        // types: 'fire', weight: 30},
     
-        {name: "Butterfree", height: 1.1 , 
-        types: ['bug' , 'fly'] , weight: 32},
+        // {name: "Butterfree", height: 1.1 , 
+        // types: ['bug' , 'fly'] , weight: 32},
     
-        {name: "Squirtle", height: 0.5 , 
-        types: 'water' , weight: 9},
+        // {name: "Squirtle", height: 0.5 , 
+        // types: 'water' , weight: 9},
     
-        {name: "Nidoking", height: 1.4 , 
-        types: ['ground' , 'poison'] , weight: 62},
+        // {name: "Nidoking", height: 1.4 , 
+        // types: ['ground' , 'poison'] , weight: 62},
     
-        {name: "Wigglytuff", height: 1 , 
-        types: ['fairy' , 'normal'] , weight: 12},
+        // {name: "Wigglytuff", height: 1 , 
+        // types: ['fairy' , 'normal'] , weight: 12},
     
-        {name: "Kangaskhan", height: 2.2 , 
-        types: 'normal' , weight: 80},
+        // {name: "Kangaskhan", height: 2.2 , 
+        // types: 'normal' , weight: 80},
     
-        {name: "Poliwrath", height: 1.3 , 
-        types: ['water' , 'fighting'] , weight: 54},
+        // {name: "Poliwrath", height: 1.3 , 
+        // types: ['water' , 'fighting'] , weight: 54},
     
-        {name: "Metagross", height: 1.6 , 
-        types: ['psychic' , 'steel'] , weight: 550}
-    ] 
+        // {name: "Metagross", height: 1.6 , 
+        // types: ['psychic' , 'steel'] , weight: 550}
+    // ] 
 
 function add(list) {
     pokemonList.push(list);
@@ -93,14 +95,53 @@ function addListItem(pokemon){
     // button.addEventListener('click',showDetails(pokemon)); it logs when the objects are loaded in the DOM
     button.addEventListener('click', function() {showDetails (pokemon);}) // this logs only when the button is clicked
 }
-function showDetails(pokemon){
-console.log('Name: '+ pokemon.name+ ', '+ 'Height: '+ pokemon.height+ 'cm, '+ 'Types: '+ pokemon.types+', '+ 'Weight: '+ pokemon.weight + 'kg' + '.')
+function showDetails(pokemon){  
+loadDetails(pokemon).then(function () {
+// console.log('Name: '+ pokemon.name+ ', '+ 'Height: '+ pokemon.height+ 'cm, '+ 'Types: '+ pokemon.types+', '+ 'Weight: '+ pokemon.weight + 'kg' + '.')
+console.log(pokemon);
+});
 }
+
+function loadList() {
+    return fetch(pokeapiUrl).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      json.results.forEach(function (item) {
+        let pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+      });
+    }).catch(function (e) {
+      console.error(e);
+    })
+  }
+
+  function loadDetails(item) {
+    let url = item.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      // Now we add the details to the item
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+      item.weight = details.weight;
+    }).catch(function (e) {
+      console.error(e);
+    });
+  }
+
+
 return {
     add: add,
     getAll: getAll,
     addListItem: addListItem,
-    showDetails: showDetails
+    showDetails: showDetails,
+    loadList: loadList,
+    loadDetails: loadDetails,
+    
   };
 })();
 // console.log(pokemonList[5]);
@@ -135,6 +176,10 @@ return {
 //         document.write(list.name + " (height: " + list.height + " weight: " + list.weight + ")- Too Big!!" + "<br><br>");
 //     }  
 // });
+
+
+pokemonRepository.loadList().then(function() {
 pokemonRepository.getAll().forEach (function (pokemon) {
 pokemonRepository.addListItem(pokemon);
+});
 });
