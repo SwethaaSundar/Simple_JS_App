@@ -103,9 +103,11 @@ console.log(pokemon);
 }
 
 function loadList() {
+  showLoadingMessage();
     return fetch(pokeapiUrl).then(function (response) {
       return response.json();
     }).then(function (json) {
+      hideLoadingMessage();
       json.results.forEach(function (item) {
         let pokemon = {
           name: item.name,
@@ -114,25 +116,34 @@ function loadList() {
         add(pokemon);
       });
     }).catch(function (e) {
+      hideLoadingMessage();
       console.error(e);
     })
   }
 
   function loadDetails(item) {
+    showLoadingMessage();
     let url = item.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
+      hideLoadingMessage();
       // Now we add the details to the item
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
       item.weight = details.weight;
     }).catch(function (e) {
+      hideLoadingMessage();
       console.error(e);
     });
   }
-
+  function showLoadingMessage(){
+    console.log("Loading details");
+  }
+  function hideLoadingMessage(){
+    console.log(" ");
+  }
 
 return {
     add: add,
@@ -141,7 +152,8 @@ return {
     showDetails: showDetails,
     loadList: loadList,
     loadDetails: loadDetails,
-    
+    showLoadingMessage: showLoadingMessage,
+    hideLoadingMessage: hideLoadingMessage
   };
 })();
 // console.log(pokemonList[5]);
