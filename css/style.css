@@ -3,8 +3,22 @@
     box-sizing: border-box;
     font-family: "Work Sans", sans-serif;
   }
+  .pokemon{
+    margin: auto;
+    /* width: 50%; */
+    padding: 10px;
+  }
+  .pokedex_lt{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 70px; 
+  }
   h1{
     font-weight: 600;
+    text-align: center;
+    font-size: 40px;
     text-align: center;
   }
   .button{
@@ -42,3 +56,100 @@
     box-shadow: rgba(0, 1, 0, 0.2) 0 2px 8px;
     opacity: 0.85;
   }
+  .pokedex_lt {
+    list-style-type: none;
+  }
+
+ .container {
+    display: none;
+}
+
+.container.is-visible {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 20%;
+  left: 37%;
+  width: 500px;
+  height: 300px;
+  background: rgba(36, 37, 35, 0.8);
+  color: rgb(205, 235, 207);
+  
+  /* to show it above other content */
+  z-index: 999; 
+  
+  /* to allow scrolling if the screen is not high enough*/
+  overflow: auto; 
+  
+  /* this is used to center the modal */
+  display: grid;
+  text-align: left;
+}
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color:  rgb(205, 235, 207);
+  text-decoration: underline;
+  font-size: 16px;
+}
+.modal-title {
+  text-transform: capitalize;
+}
+.modal-height, .modal-weight, .modal-types{
+  font-size: 20px;
+}
+.modal-image{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 70px;
+  right:20px;
+}
+@media all and (max-width: 500px) {
+  .pokedex_lt{
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    width: 500px;
+  }
+  h1{
+    text-align: center;
+  }
+  .container.is-visible{
+    width: 250px;
+    height: 350px;
+  }
+  .modal-image{
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    top: 200px;
+    left: 75px;
+  }
+  .modal-title{
+    font-size: 30px;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .pokedex_lt{
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    width: 500px;
+  }
+  h1{
+    text-align: center;
+  }
+  .container.is-visible{
+    width: 300px;
+    height: 400px;
+  }
+  .modal-image{
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+  }
+}
+
