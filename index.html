@@ -4,19 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap’s CSS  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+    crossorigin="anonymous">
+    <!-- CSS style -->
     <link rel="stylesheet" href="css/style.css">
     <title>Simple JS App </title>
 </head>
 <body>
-    <div class="pokemon">
-        <h1>Pokedex</h1>
-        <!-- <ul class="pokemon__list"></ul> -->
-         <!-- <button type="button">Pokemon Attributes</button> -->
-        <ul class="pokedex_lt">
-        </ul>
-        <div class="container"></div> 
-      </div>
-      <br>
+        <nav class="navbar navbar-light justify-content-between" style="background-color: rgb(56, 75, 49); color: rgb(255, 255, 255);">
+            <a class="navbar-brand" style="font-size: 45px; color: rgb(255, 255, 255);">Pokedex</a>
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" id="poke_search" onkeyup="mySearch()" type="text" placeholder="Search" aria-label="Search">
+            </form>
+          </nav>
+         <main>
+           <!-- Pokemon list   -->
+           <ul class="poke_list list-group" id="poke_lt"></ul>
+        <!-- Modal -->
+        <div class="modal fade" id="pokeModal" tabindex="-1" role="dialog" aria-labelledby="pokeModalTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="pokeModalTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              </div>
+    </main>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" 
+    crossorigin="anonymous"></script>
+
     <!-- Always add the external JS file before the closing body tag -->
     <script src="js/fetch-pollyfill.js"></script>
     <script src="js/promise-pollyfill.js"></script>
