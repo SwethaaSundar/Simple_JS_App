@@ -9,31 +9,35 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
     crossorigin="anonymous">
     <!-- CSS style -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="src/style.css">
     <title>Simple JS App </title>
 </head>
 <body>
-        <nav class="navbar navbar-light justify-content-between" style="background-color: rgb(56, 75, 49); color: rgb(255, 255, 255);">
-            <a class="navbar-brand" style="font-size: 45px; color: rgb(255, 255, 255);">Pokedex</a>
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" id="poke_search" onkeyup="mySearch()" type="text" placeholder="Search" aria-label="Search">
-            </form>
-          </nav>
-         <main>
-           <!-- Pokemon list   -->
-           <ul class="poke_list list-group" id="poke_lt"></ul>
-        <!-- Modal -->
-        <div class="modal fade" id="pokeModal" tabindex="-1" role="dialog" aria-labelledby="pokeModalTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="pokeModalTitle"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-              </div>
+  <nav class="navbar navbar-light m-0 sticky-top">
+    <span class="navbar-brand font-weight-bolder text-light">Pokedex</span>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" id="poke_search" onkeyup="mySearch()" type="text" placeholder="Search" aria-label="Search"/>
+    </form>    
+  </nav>
+  <main>    
+    <div class="container"></div>
+    <!-- Pokemon list   -->
+    <ul class="poke_list list-group" id="poke_lt"></ul>^
+
+    <!-- Modal -->
+    <div class="modal fade" id="pokeModal" tabindex="-1" role="dialog" aria-labelledby="pokeModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="pokeModalTitle"></h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body"></div>
+    </div>
+    </div>
+    </div>
     </main>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -50,7 +54,7 @@
     <!-- Always add the external JS file before the closing body tag -->
     <script src="js/fetch-pollyfill.js"></script>
     <script src="js/promise-pollyfill.js"></script>
-    <script src="js/script.js"></script>
+    <script src="src/script.js"></script>
     <!-- <script src="js/myref.js"></script> -->
 </body>
 </html>

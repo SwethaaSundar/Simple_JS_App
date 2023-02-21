@@ -13,10 +13,12 @@ function getAll(){
 // This function adds a button to the website with the pokemon name
 // and an event listener that calls the showDetails function on click
 function addListItem(pokemon){
-    let pokeList = $('.poke_list');
+    let pokeList = $('#poke_lt');
     let listItem = $('<li class="list-group-item "></li>');
-    let button = $(`<button type="button" class="pokemon-button btn_poke" 
-            data-toggle="modal" data-target="#pokeModal">${pokemon.name}</button>`);
+    // let button = $(`<button type="button" class="pokemon-button btn_poke" 
+    //         data-toggle="modal" data-target="#pokeModal">${pokemon.name}</button>`);
+    let button = $(`<button type="button" class=" btn btn-primary pokemon-button" 
+    data-toggle="modal" data-target="#pokeModal">${pokemon.name}</button>`);
             
     listItem.append(button);
     pokeList.append(listItem);
