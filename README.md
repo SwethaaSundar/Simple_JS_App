@@ -22,12 +22,13 @@ https://swethaasundar.github.io/Simple_JS_App/
     -Bootstrap
     -API- https://pokeapi.co/
 
-## How to use the site: **
+## How to use the site:
 You can click on the buttons to see the pokémon's height, types, weight and an image of it. The modal window can be closed by clicking on the 'Close' button, clicking outside the window or pressing 'Escape'.
 
 With the use of searchbar you can search for a specific pokémon. Write in the name (or just a part of it), returns a pokemon array with all pokemons that include the "search" term in their Name. If you would like to have all the pokémons again, then clear the search bar.
 
 ## Screenshot
 ![pokémon list app](https://github.com/SwethaaSundar/Simple_JS_App/blob/main/screenshot.png)
+<!-- <img src="" alt="Alt text" title="Optional title"> -->
 
 
