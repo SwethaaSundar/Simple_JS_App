@@ -28,7 +28,7 @@ You can click on the buttons to see the pokémon's height, types, weight and an 
 With the use of searchbar you can search for a specific pokémon. Write in the name (or just a part of it), returns a pokemon array with all pokemons that include the "search" term in their Name. If you would like to have all the pokémons again, then clear the search bar.
 
 ## Screenshot
-![pokémon list app](https://github.com/SwethaaSundar/Simple_JS_App/blob/main/screenshot.png)
+![pokémon list app](https://github.com/SwethaaSundar/Simple_JS_App/blob/main/pokemon_app_screenshot.png)
 <!-- <img src="" alt="Alt text" title="Optional title"> -->
 
 
