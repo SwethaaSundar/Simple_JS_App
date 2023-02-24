@@ -1,4 +1,4 @@
-# Simple_JS_App
+# Simple_JS_App (Pokemon Index)
 Basic JS application
 This is a simple JavaScript application- Pokemon list app with its types, height, weight and image.
 https://swethaasundar.github.io/Simple_JS_App/

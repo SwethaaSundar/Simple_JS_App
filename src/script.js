@@ -14,7 +14,7 @@ let pokemonRepository = (function () {
   // and an event listener that calls the showDetails function on click
   function addListItem(pokemon) {
     let pokeList = $("#poke_lt");
-    let listItem = $('<li class="list-group-item "></li>');
+    let listItem = $('<li class="list-group-item col-12 col-md-4 col-lg-3"></li>');
     // let button = $(`<button type="button" class="pokemon-button btn_poke"
     //         data-toggle="modal" data-target="#pokeModal">${pokemon.name}</button>`);
     let button =
